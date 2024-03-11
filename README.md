@@ -12,9 +12,9 @@ Requirements included cleaning, normalizing, and standardizing the data before m
 The particular dataset used was one on Lending Club (LC) loan data for all loans issued by LC from 2007 through 2018.
 
 The Database Contents License for the dataset grants the user “a worldwide, royalty-free, non-exclusive, perpetual, irrevocable copyright license” as well as “permission for any information having copyright contained in the [dataset] Contents.” Accordingly, copyright or license considerations were fulfilled, and by virtue of the “id” and “member_id” columns in the dataset being empty and no other individual identifiable information being present, privacy considerations were satisfied as well.
-The dataset appeared in csv format (“loan.csv”). Its shape was bounded by  2,260,668 rows across 145 columns, most of which contained float d types but also included integers and objects. Total memory usage was 2.4+ GB.
+The dataset appeared in csv format ([loan.csv](Data_Source/loan.csv)). Its shape was bounded by  2,260,668 rows across 145 columns, most of which contained float d types but also included integers and objects. Total memory usage was 2.4+ GB.
 
-The dataset was accompanied by a three-tab data dictionary (xlsx format) in which each tab listed column names and their corresponding definitions.
+The dataset was accompanied by a three-tab [data dictionary](Data_Source/LCDataDictionary.xlsx) (xlsx format) in which each tab listed column names and their corresponding definitions.
 
 ## Data Processing and Analysis
 Extensive review of the data dictionary was done to understand the columns in the dataset and the kind of information contained.
@@ -22,10 +22,10 @@ Then, an initial normalizing of the data was performed to see, relative to loan 
 
 After initial modeling was performed, the dataset was further examined and considered for refinement. Analysis revealed a significant number of columns that were less-than-fully populated with values and a few columns that were even empty. Accordingly, those columns were eliminated, leaving only the ones that contained a full set of values. In addition, investigation of the data in terms of years determined  that more than 40% of the dataset was concentrated in the years 2017 and 2018 alone. Considering that as a significant representation for modeling purposes, those years were selected as the ones to draw from, and the dataset was further limited to them. Reshaping of the dataset, then, reduced it to a more manageable one containing 938,821 rows and 50 columns and a memory usage of 365.3+ MB.
 
-The final dataset was accordingly saved to a new csv file.
+The final dataset was accordingly saved to a new [csv file](Data_Source/LC_loans_2017-2018.csv).
 
 ## Data Modeling – Approach and Results
-A predictive model was initiated using the original dataset and sub-grades as the target, but still with select columns (a dozen or less) as features, considering how their number would expand with use of get_dummies() and consequently exceed memory constraints. Rows with null values were also dropped. Because sub-grades totaled 35, however, they proved to be unwieldy as a target, and grades – which totaled, in contrast, 7 – were used as the target instead.
+A [predictive model](neural_network.ipynb) was initiated using the original dataset and sub-grades as the target, but still with select columns (a dozen or less) as features, considering how their number would expand with use of get_dummies() and consequently exceed memory constraints. Rows with null values were also dropped. Because sub-grades totaled 35, however, they proved to be unwieldy as a target, and grades – which totaled, in contrast, 7 – were used as the target instead.
 
 With the StandardScaler applied, and three neural network layers made using sigmoid and softmax activations, the model was fitted, and epochs run. Those soon revealed accuracy to be only in the 41-42% range, and consequently the dataset and columns selected as features were revisited.
 
