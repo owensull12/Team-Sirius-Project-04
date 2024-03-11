@@ -1,6 +1,7 @@
 # Team-Sirius-Project-04
 
-## Team:  ### Luz Aguilar, Scott McNiff, Melanie Runser, Owen Sull, & Jerry Youngblood
+## Team:  
+### Luz Aguilar, Scott McNiff, Melanie Runser, Owen Sull, & Jerry Youngblood
 
 ## 
 
