@@ -25,17 +25,18 @@ After initial modeling was performed, the dataset was further examined and consi
 The final dataset was accordingly saved to a new [csv file](Data_Source/LC_loans_2017-2018.csv).
 
 ## Data Modeling – Approach and Results
-A [predictive model](neural_network.ipynb) was initiated using the original dataset and sub-grades as the target, but still with select columns (a dozen or less) as features, considering how their number would expand with use of get_dummies() and consequently exceed memory constraints. Rows with null values were also dropped. Because sub-grades totaled 35, however, they proved to be unwieldy as a target, and grades – which totaled, in contrast, 7 – were used as the target instead.
+A [predictive model](neural_network.ipynb) was initiated using the original dataset and sub-grades as the target, but still with select columns (a dozen or less) as features, considering how their number would expand with use of get_dummies() and consequently exceed memory constraints. Rows with null values were also dropped. With the StandardScaler applied, and three neural network layers made using sigmoid and softmax activations, the model was fitted, and epochs run. Early accuracy readings were merely 10.7%, however, with a top two predictions accuracy of only 20.3%. Further optimization was certainly needed, and because sub-grades totaled 35 by count, but grades only 7, grade became the substitute target for sub-grade.
 
-With the StandardScaler applied, and three neural network layers made using sigmoid and softmax activations, the model was fitted, and epochs run. Those soon revealed accuracy to be only in the 41-42% range, and consequently the dataset and columns selected as features were revisited.
+The build-up to a model with grade as target was followed as previously for sub-grade with use of the same three neural network layers. The model was fitted, and as epochs were generated, they revealed accuracy to be much higher than for sub-grades but still only in the 41-43% range with a top two predictions accuracy of 71.7%. Consequently, the dataset and columns that had been selected as features were revisited.
 
-Upon more analysis of the dataset, it was determined that it could be reshaped as described above, reducing its columns by nearly a third and cutting its number of rows by more than half. In addition, it was further observed that loan grade influences interest rate, but interest rate does not affect loan grade.
+Upon more analysis of those, it was determined that the entire dataset could be reshaped as described above (Data Processing and Analysis), reducing its columns by nearly a third and cutting its number of rows by more than half. In addition, it was further observed that loan grade influences interest rate, but interest rate does not drive loan grade.
 
-In light of those observations, another model was initiated with the reshaped dataset and a new target of interest rate instead of grade. A different selection of columns was made, considering the changes to the original dataset and including sub-grade given its granularity compared with grades. In addition, four layers versus three were used for the neural network, repeating usage of sigmoid but exchanging softmax for linear. With the model accordingly fitted, epochs were started and immediately began showing achievement of 98-99% accuracy.
+In light of those observations, another model was initiated with the reshaped dataset and a new target of interest rate instead of grade. Also, a different selection of columns was made, considering the changes to the original dataset and particular inclusion of sub-grade as a feature given its increased granularity in contrast to grades. In addition, four layers versus three were used for the neural network, repeating usage of sigmoid but exchanging softmax for linear. With the model accordingly fitted, epochs were started and immediately began showing achievement of 99.4% accuracy.
+
 Visualizations were then prepared to demonstrate relationships between features and the target of interest rate.
 
 ## Technological Resources
-Several tools/libraries and applications were used in this project. Python Pandas, along with Numpy, Matplotlib, and Seaborn were used in Jupyter notebooks for data processing and early analysis. Sci-Kit Learn, TensorFlow, and Keras were used in Google Colab to initiate and execute the neural network models. And Tableau was used for visualizations.
+Several tools/libraries and applications were used in this project. Python Pandas - along with Matplotlib, NumPy, Re, Sci-Kit Learn, SciPy, Seaborn, and StatsModels - were imported into Jupyter notebooks for data processing and early analysis. Sci-Kit Learn, TensorFlow, and Keras were imported into Google Colab to initiate and execute the neural network models. And Matplotlib and Tableau were relied upon for data visualizations.
 
 ## Usage & Contributing
 This project is not open for contributions, as it is a homework assignment only. Please do not copy, modify, or distribute this code without permission. 
@@ -50,4 +51,5 @@ We utilized multiple resources for clarification, to determine error sources, et
 https://www.kaggle.com/datasets/adarshsng/lending-club-loan-data-csv
 https://www.lendingclub.com/glossary
 https://www.informatica.com/resources/articles/what-is-etl.html (ETL diagram image)
+https://pypi.org/project/plot-keras-history/
 https://stackoverflow.com/questions/37532098/split-dataframe-into-two-on-the-basis-of-date
