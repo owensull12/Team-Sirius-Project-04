@@ -36,7 +36,7 @@ In light of those observations, another model was initiated with the reshaped da
 Visualizations were then prepared to demonstrate relationships between features and the target of interest rate.
 
 ## Technological Resources
-Several tools/libraries and applications were used in this project. Python Pandas - along with Matplotlib, NumPy, Re, Sci-Kit Learn, SciPy, Seaborn, and StatsModels - were imported into Jupyter notebooks for data processing and early analysis. Sci-Kit Learn, TensorFlow, and Keras were imported into Google Colab to initiate and execute the neural network models. And Matplotlib and Tableau were relied upon for data visualizations.
+Several tools/libraries and applications were used in this project. Python Pandas - along with Matplotlib, NumPy, Re, Sci-Kit Learn, SciPy, Seaborn, and StatsModels - were imported into Jupyter notebooks for data processing and early analysis. Sci-Kit Learn, TensorFlow, and Keras were imported into a separate Jupyter notebook to initiate and execute the neural network models. Matplotlib, Seaborn, and Tableau were relied upon for data visualizations.
 
 ## Usage & Contributing
 This project is not open for contributions, as it is a homework assignment only. Please do not copy, modify, or distribute this code without permission. 
