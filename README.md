@@ -1,4 +1,4 @@
-# Team-Sirius-Project-04
+# Loan Interest Rate Predictions
 
 ## Team:  
 ### Luz Aguilar, Scott McNiff, Melanie Runser, Owen Sull, & Jerry Youngblood
